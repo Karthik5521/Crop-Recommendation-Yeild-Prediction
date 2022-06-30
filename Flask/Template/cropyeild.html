@@ -1,0 +1,113 @@
+<!Doctype Html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+x {
+  font-size: 20px;
+}
+
+div.a {
+  text-align: center;
+}
+div.b {
+  text-align: center;
+}
+div.c {
+  text-align: left;
+}
+div.d {
+  text-align: right;
+}
+body {
+  
+  background-image:url("{{ url_for('static', filename='farmer1.jpg') }}");
+  background-repeat: no-repeat;
+  background-size: 100% 60%;
+}
+</style>
+<div class="d"><br>
+  <a href="{{ url_for('welcome') }}" style="font-size:25px" >&emsp;home 
+  <a href="{{ url_for('soil_test')}}" style="font-size:25px" >&emsp;Soiltest    
+  <a href="{{ url_for('crop_prediction') }}" style="font-size:25px" >&emsp;crop 
+  <a href="{{ url_for('crop_disease')}}" style="font-size:25px" >&emsp;disease
+  </a>
+  </div>
+
+<div class="a">
+<h1>Crop yeild </h1>
+<form action="/submit3" method='post'>
+
+  <label for="Crop">Crop:</label>
+  <select id="Crop" name="Crop">
+  <option value="Arhar">Arhar</option>
+  <option value="Cotton">Cotton</option>
+  <option value="Gram">Gram</option>
+  <option value="Groundnut">Groundnut</option>
+  <option value="Maize">Maize</option>
+  <option value="Moong">Moong</option>
+  <option value="Paddy">Paddy</option>
+  <option value="RM">Rapeseed & Mustard</option>
+  <option value="Sugarcane">Sugarcane</option>
+  <option value="Wheat">Wheat</option>
+  </select><br><br>
+  
+  
+  <label for="State">State:</label>
+  <select id="State" name="State">
+  <option value="AP">Andhra Pradesh</option>
+  <option value="Gujarat">Gujarat</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="UP">Uttar Pradesh</option>
+  <option value="Haryana">Haryana</option>
+  <option value="Punjab">Punjab</option>
+  <option value="MP">Madhya Pradesh</option>
+  <option value="Rajasthan">Rajasthan</option>
+  <option value="TN">Tamil Nadu</option>
+  <option value="Bihar">Bihar</option>
+  <option value="Orissa">Orissa</option>
+  <option value="WB">West Bengal</option>
+  </select><br><br>
+  
+  <label for="cost">Cost of Cultivation (`/Hectare) A2+FL (ranges from 0 to 50000):</label><br>
+  <input type="text" id="cost" name="cost" value="0"><br><br>
+  
+   <label for="cost1">Cost of Cultivation (`/Hectare) C2 (ranges from 0 to 50000):</label><br>
+  <input type="text" id="cost1" name="cost1" value="0"><br><br>
+
+  <label for="cost2">Cost of Production (`/Quintal) C2 (ranges from 0 to 6000):</label><br>
+  <input type="text" id="cost2" name="cost2" value="0"><br><br>
+  
+  <label for="price">Support price</label><br>
+  <input type="number" id="price" name="price" value="0"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+</div>
+</head>
+<br><br><br>
+<div class="container">
+  <img src="{{ url_for('static', filename='green.png') }}" alt="crop_disease" style="width:1340px;height:300px;">
+  <div class="centered">
+  <h1>ABOUT US</h1>
+  <h3>© Copyright 2021 @The Smartbridge</h3>
+  <h3>for more queries about KISAAN HELP DESK please connect us at</h3>
+  <a href="https://www.linkedin.com/company/smartinternz/" style="font-size:25px">Linkedln!</a><br>
+  <a href="mail to:https://smartinternz.com/" style="font-size:25px">mail!</a><br> 
+
+  
+  </div>
+  </div>
+</style>
+</html>
